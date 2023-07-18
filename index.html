@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- 
+    by dean baker 07/2023
+  -->
+  <head>
+    <!-- <meta charset="UTF-8" /> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <link rel="stylesheet" href="styles.css" />
+    <title id="page-title">Promodo</title>
+  </head>
+  <body>
+    <div class="container">
+      <code id="timer" class="timer">00:00</code>
+      <button onclick="btn_click()">start</button>
+      <audio
+        id="sound"
+        src="/sounds/Rest _Rolling-Office-Chair.mp3"
+        preload="auto"
+      ></audio>
+      <code class="set-controls">
+        <span id="work" class="valuebox">
+          work:
+          <input
+            id="work-hour"
+            type="number"
+            min="0"
+            max="12"
+            value="0"
+          />h:<input id="work-min" type="number" min="0" max="59" value="25" />m
+        </span>
+        <span id="rest" class="valuebox">
+          rest:
+          <input
+            id="rest-hour"
+            type="number"
+            min="0"
+            max="12"
+            value="0"
+          />h:<input id="rest-min" type="number" min="0" max="59" value="5" />m
+        </span>
+      </code>
+      <code
+        ><span>current time: </span><span id="clock"> 00:00:00 nm</span></code
+      >
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

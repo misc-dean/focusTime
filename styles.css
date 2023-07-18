@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.timer {
+  font-size: 6rem;
+}
+
+button {
+  border: solid 1px white;
+  height: 2rem;
+  width: 6rem;
+}
+button:active {
+  border: solid 2px;
+}
+.set-controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+}
+.valuebox {
+  border: solid 1px white;
+  padding: 8px 16px 8px 16px;
+}
+.disabled {
+  border: solid 1px gray;
+  color: gray;
+  cursor: not-allowed;
+}
+input[type="number"] {
+  width: 14px;
+  border: solid 0px transparent;
+  text-align: right;
+  color: inherit;
+  cursor: inherit;
+  text-decoration: underline;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+#clock {
+  display: inline-block;
+  width: 88px;
+  text-align: right;
+}
