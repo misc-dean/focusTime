@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- 
-    by dean baker 07/2023
+	<!-- 
+    by dean baker 
+    v2 03/2024
   -->
-  <head>
-    <!-- <meta charset="UTF-8" /> -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-    <link rel="stylesheet" href="styles.css" />
-    <title id="page-title">Promodo</title>
-  </head>
-  <body>
-    <div class="container">
-      <code id="timer" class="timer">00:00</code>
-      <button onclick="btn_click()">start</button>
-      <audio
-        id="sound"
-        src="/sounds/Rest _Rolling-Office-Chair.mp3"
-        preload="auto"
-      ></audio>
-      <code class="set-controls">
-        <span id="work" class="valuebox">
-          work:
-          <input
-            id="work-hour"
-            type="number"
-            min="0"
-            max="12"
-            value="0"
-          />h:<input id="work-min" type="number" min="0" max="59" value="25" />m
-        </span>
-        <span id="rest" class="valuebox">
-          rest:
-          <input
-            id="rest-hour"
-            type="number"
-            min="0"
-            max="12"
-            value="0"
-          />h:<input id="rest-min" type="number" min="0" max="59" value="5" />m
-        </span>
-      </code>
-      <code
-        ><span>current time: </span><span id="clock"> 00:00:00 nm</span></code
-      >
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" />
+		<link rel="stylesheet" href="./resources/styles.css" />
+		<title id="page-title">Focus Time</title>
+	</head>
+	<body>
+		<main id="timeModule">
+			<div class="timerContainer">
+				<div id="work" class="timer">
+					<label for="work-select">WORK</label>
+					<div>
+						<select id="work-select" oninput="handleTimeChange('work')">
+							<option value="5">5</option>
+							<option value="10">10</option>
+							<option value="15">15</option>
+							<option value="20">20</option>
+							<option value="25" selected>25</option>
+							<option value="30">30</option>
+						</select>
+						<h1 id="work-time"></h1>
+					</div>
+				</div>
+				<div id="rest" class="timer">
+					<label for="rest-select">REST</label>
+					<div>
+						<select id="rest-select" oninput="handleTimeChange('rest')">
+							<option value="5" selected>5</option>
+							<option value="10">10</option>
+							<option value="15">15</option>
+							<option value="20">20</option>
+							<option value="25">25</option>
+							<option value="30">30</option>
+						</select>
+						<h1 id="rest-time"></h1>
+					</div>
+				</div>
+			</div>
+			<div>
+				<button id="ssBtn" onclick="handleButton()">start</button>
+				<div class="sound" onclick="handleMute()">
+					<img class="volume-img" src="./resources/icons/sound.png" alt="mute" />
+					<img class="mute-img" src="./resources/icons/mute.png" alt="volume" />
+				</div>
+			</div>
+		</main>
 
-    <script src="script.js"></script>
-  </body>
+		<audio id="sound" src="" preload="auto"></audio>
+		<script src="./resources/script.js"></script>
+		<noscript>You need to enable JavaScript for this App to work!</noscript>
+	</body>
 </html>
