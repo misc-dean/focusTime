@@ -3,23 +3,23 @@ const time = {
 	work: {
 		min: 25,
 		_sound: './resources/sounds/Work_Pen-Click.mp3',
-		element: document.querySelector(`#work`),
-		display: document.querySelector(`#work-time`),
-		select: document.querySelector(`#work-select`),
+		element: document.querySelector('#work'),
+		display: document.querySelector('#work-time'),
+		select: document.querySelector('#work-select'),
 		switchTo: 'rest',
 		message: 'Time to Focus on your work!',
 	},
 	rest: {
 		min: 5,
 		_sound: './resources//sounds/Rest_Rolling-Office-Chair.mp3',
-		element: document.querySelector(`#rest`),
-		display: document.querySelector(`#rest-time`),
-		select: document.querySelector(`#rest-select`),
+		element: document.querySelector('#rest'),
+		display: document.querySelector('#rest-time'),
+		select: document.querySelector('#rest-select'),
 		switchTo: 'work',
 		message: 'Time for a break.',
 	},
 };
-const timeModule = document.querySelector(`#timeModule`);
+const timeModule = document.querySelector('#timeModule');
 
 //* object access by dot notation ✅
 const reset = () => {
@@ -37,7 +37,7 @@ const handleTimeChange = (type) => {
 ////
 // * Stop/Start Button (ssBtn) funtion selection control ??? ???
 const handleButton = () => {
-	const ssBtn = document.querySelector(`#ssBtn`);
+	const ssBtn = document.querySelector('#ssBtn');
 	if (ssBtn.innerHTML === 'start') {
 		sound(time.work._sound, 0);
 		//RUN TIMER FUNCTION
@@ -56,7 +56,7 @@ const handleButton = () => {
 let timer_interval;
 //* count down timer ✅
 const timer = (type, min) => {
-	const notification = new Notification(time[type]['message']);
+	// const notification = new Notification(time[type]['message']);
 	timeModule.classList.add(type);
 	sound(time[type]['_sound']);
 	// get the time right now and add the min to get calc target
@@ -93,11 +93,11 @@ let volume = 0.8;
 //* the mute or volume function ✅
 const handleMute = () => {
 	if (mute) {
-		document.querySelector(`.sound`).classList.remove('mute');
+		document.querySelector('.sound').classList.remove('mute');
 		mute = false;
 		volume = 0.8;
 	} else {
-		document.querySelector(`.sound`).classList.add('mute');
+		document.querySelector('.sound').classList.add('mute');
 		mute = true;
 		volume = 0;
 	}
